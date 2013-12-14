@@ -1,0 +1,5 @@
+Just pages that can be helpful when working on the wrapper
+
+http://www.opus-codec.org/
+
+http://www.opus-codec.org/docs/html_api-1.1.0/opus__defines_8h_source.html
