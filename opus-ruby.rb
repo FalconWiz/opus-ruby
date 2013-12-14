@@ -31,7 +31,10 @@ module Opus
 	typedef :uint 		, :opus_uint
 	typedef :ulong_long	, :opus_uint64
 	typedef :uchar 		, :opus_uint8
-
+	typedef :short 		, :opus_int16
+	typedef :ushort 	, :opus_uint16
+	typedef :int 		, :opus_int32
+	typedef :uint 		, :opus_uint32
 
 	attach_function :opus_encoder_create, [:pointer, :int, :pointer], :pointer
 	attach_function :opus_encoder_destroy, [:pointer], :void
