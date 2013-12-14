@@ -25,6 +25,14 @@ module Opus
 
 	end
 
+	typedef :int 		, :opus_int
+	typedef :long_long 	, :opus_int64
+	typedef :char 		, :opus_int8
+	typedef :uint 		, :opus_uint
+	typedef :ulong_long	, :opus_uint64
+	typedef :uchar 		, :opus_uint8
+
+
 	attach_function :opus_encoder_create, [:pointer, :int, :pointer], :pointer
 	attach_function :opus_encoder_destroy, [:pointer], :void
 	#Take another look at :opus_encode_float, parameters probably wrong, should have 6 and return int
