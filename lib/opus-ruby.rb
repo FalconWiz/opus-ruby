@@ -36,20 +36,16 @@ module Opus
 	typedef :int 		, :opus_int32
 	typedef :uint 		, :opus_uint32
 
-	attach_function :opus_encoder_create, [:pointer, :int, :pointer], :pointer
+	attach_function :opus_encoder_create, [:opus_int32, :int, :int, :pointer], :pointer
 	attach_function :opus_encoder_destroy, [:pointer], :void
-	#Take another look at :opus_encode_float, parameters probably wrong, should have 6 and return int
-	attach_function :opus_encode_float, [:pointer, :pointer, :pointer, :pointer, :int], :int
-	#opus_encode probably wrong too
-	attach_function :opus_encode, [:pointer, :pointer, :pointer, :pointer, :int], :int
+	attach_function :opus_encode_float, [:pointer, :pointer, :int, :pointer, :opus_int32], :opus_int32
+	attach_function :opus_encode, [:pointer, :pointer, :int, :pointer, :opus_int32], :opus_int32
 	attach_function :opus_encoder_ctl, [:pointer, :int, :varargs], :int
 
-	attach_function :opus_decoder_create, [:pointer, :int, :pointer], :pointer
+	attach_function :opus_decoder_create, [:opus_int32, :int, :pointer], :pointer
 	attach_function :opus_decoder_destroy, [:pointer], :void
-	#Take another look at :opus_decode_float, parameters probably wrong, float and decode should have 6 parameters and return an :int
-	attach_function :opus_decode_float, [:pointer, :pointer, :pointer, :pointer, :pointer, :pointer], :int
-	#opus_decode probably wrong too
-	attach_function :opus_decode, [:pointer, :pointer, :pointer, :pointer, :pointer, :int]
+	attach_function :opus_decode_float, [:pointer, :pointer, :opus_int32, :pointer, :int, :int], :int
+	attach_function :opus_decode, [:pointer, :pointer, :opus_int32, :pointer, :int, :int], :int
 	attach_function :opus_decode_ctl, [:pointer, :int, :varargs], :int
 
 end
