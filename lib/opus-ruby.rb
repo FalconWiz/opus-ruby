@@ -5,7 +5,7 @@ require 'opus-ruby/version'
 module Opus
 	extend FFI::Library
 
-	ffi_lib 'Opus0'
+	ffi_lib 'opus0'
 
 	module Constants
 		OPUS_OK = 0
