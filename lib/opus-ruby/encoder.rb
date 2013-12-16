@@ -16,8 +16,8 @@ module Opus
 
 		def encode(data, size, max_data_bytes)
 			pcm = FFI::MemoryPointer.new :opus_int16, data.size + 1
-      		out = FFI::MemoryPointer.new :uchar, data.size + 1
-			len = Opus.opus_encode @encoder, pcm, frame_size, out, max_data_bytes
+      			out = FFI::MemoryPointer.new :uchar, data.size + 1
+			len = Opus.opus_encode @encoder, pcm, @frame_size, out, max_data_bytes
 			out.read_string_length len
 		end
 	end
