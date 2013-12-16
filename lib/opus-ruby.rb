@@ -60,16 +60,16 @@ module Opus
 		OPUS_GET_PREDICTION_DISABLED_REQUEST = 4043
 	end
 
-	typedef :int 		, :opus_int
-	typedef :long_long 	, :opus_int64
-	typedef :char 		, :opus_int8
-	typedef :uint 		, :opus_uint
+	typedef :int		, :opus_int
+	typedef :long_long	, :opus_int64
+	typedef :cha		, :opus_int8
+	typedef :uin		, :opus_uint
 	typedef :ulong_long	, :opus_uint64
-	typedef :uchar 		, :opus_uint8
-	typedef :short 		, :opus_int16
-	typedef :ushort 	, :opus_uint16
-	typedef :int 		, :opus_int32
-	typedef :uint 		, :opus_uint32
+	typedef :ucha		, :opus_uint8
+	typedef :shor		, :opus_int16
+	typedef :ushor		, :opus_uint16
+	typedef :in		, :opus_int32
+	typedef :uin		, :opus_uint32
 
 	attach_function :opus_encoder_create, [:opus_int32, :int, :int, :pointer], :pointer
 	attach_function :opus_encoder_destroy, [:pointer], :void
